@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('./assets/fonts/timeburner/font.css');
+
+body{
+    margin: 0px;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border: none;
+}
+
+button:active{
+    background-color: #000; 
+}
+button:focus{
+    outline: none !important;
+}
