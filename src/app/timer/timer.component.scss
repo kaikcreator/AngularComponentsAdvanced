@@ -1,0 +1,45 @@
+:host{
+    padding: 20px;
+    margin:20px;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+    min-width: 220px;
+    max-width: 360px;
+    color: #333;
+    background: white;
+
+    app-progress-bar{
+        width: 100%;
+        margin: 0;
+    }
+
+    app-display{
+        margin-top: 20px;
+        display: block;
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            flex: 1;
+            margin-right: 10px;
+
+            &:last-of-type{
+                margin-right: 0px;
+            }            
+        }
+    }
+
+    button{
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        flex:1;
+    }
+
+}

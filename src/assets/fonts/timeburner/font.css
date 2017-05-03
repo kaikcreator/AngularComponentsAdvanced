@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'TimeBurner';
+  src: url('TimeBurner.woff') format('woff'),
+       url('TimeBurner.ttf') format('truetype'),
+       url('TimeBurner.svg#TimeBurner') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'timeburnernormal';
+  src: url('timeburnernormal.eot');
+  src: url('timeburnernormal.woff2') format('woff2'),
+       url('timeburnernormal.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -5,14 +5,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
-import { CountdownComponent } from "./countdown/countdown.component";
+import { DisplayComponent } from "./display/display.component";
+import { TimerComponent } from './timer/timer.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProgressBarComponent,
-    CountdownComponent
+    DisplayComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

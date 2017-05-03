@@ -1,0 +1,7 @@
+<div class="timer">
+  <app-progress-bar [progress]="(init-countdown)/init*100"></app-progress-bar>
+
+  <app-display [time]="countdown"></app-display>
+
+  <button (click)="startCountdown()">RESTART</button>
+</div>
