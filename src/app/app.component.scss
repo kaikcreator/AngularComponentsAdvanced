@@ -14,4 +14,21 @@
             flex-grow: 1;
         }
     }
+
+    .add{
+        position: fixed;
+        color: white;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        border: none;
+        font-size: 30px;
+        background-color: #DDD;
+
+        &:active{
+            background-color:#AAA;
+        }
+    }
 }

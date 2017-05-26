@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { DisplayComponent } from "./display/display.component";
 import { TimerComponent } from './timer/timer.component';
+import { AlertViewComponent } from './alert-view/alert-view.component';
 
 
 
@@ -15,7 +16,8 @@ import { TimerComponent } from './timer/timer.component';
     AppComponent,
     ProgressBarComponent,
     DisplayComponent,
-    TimerComponent
+    TimerComponent,
+    AlertViewComponent
   ],
   imports: [
     BrowserModule,
