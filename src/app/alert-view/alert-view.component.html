@@ -4,7 +4,7 @@
   <div class="card">
 
     <div class="header">
-      Add new timer
+      <ng-content select="[header]"></ng-content>
     </div>
 
     <div class="message">
@@ -12,8 +12,7 @@
     </div>
 
     <div class="footer">
-      <button (click)="onCancel.emit()" class="cancel-button">Cancel</button>
-      <button (click)="onSubmit.emit()">Ok</button>
+      <ng-content select="button"></ng-content>
     </div>
   </div>
 
