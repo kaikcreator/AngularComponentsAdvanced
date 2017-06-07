@@ -15,10 +15,6 @@ export class TabsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.addTab({isActive:false, title:"tab 1"});
-    this.addTab({isActive:false, title:"tab 2"});
-    this.addTab({isActive:false, title:"tab 3"});
-    this.addTab({isActive:false, title:"tab 4"});
   }
 
   addTab(tab:Tab){
