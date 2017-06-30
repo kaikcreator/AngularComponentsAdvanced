@@ -1,0 +1,20 @@
+<div *ngIf="visible">
+  <div class="background"></div>
+
+  <div class="card">
+
+    <div class="header">
+      {{title}}
+    </div>
+
+    <div class="message">
+      {{message}}
+    </div>
+
+    <div class="footer">
+      <button (click)="dismiss()">Ok</button>
+    </div>
+
+  </div>
+
+</div>
