@@ -23,12 +23,11 @@
   </app-alert-view>
 
 
-  <app-alert-view [hidden]="!isEndTimerAlertVisible">
-    <div header>Timer ended</div>    
-    <div>Your countdown has finished</div>
-    <button (click)="hideEndTimerAlert()">Ok</button>
-  </app-alert-view>
-
+  <app-simple-alert-view
+    title="Timer Ended"
+    message="Your countdown has finished">
+  </app-simple-alert-view>
+  
   <app-simple-alert-view></app-simple-alert-view>
   
 </div>
