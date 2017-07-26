@@ -21,20 +21,7 @@
     <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
     <button (click)="submitAddTimer()">Ok</button>
   </app-alert-view>
-
-<ng-template #timeEndTemplate let-message let-title="title">
-  <app-simple-alert-view
-    [title]="title"
-    [message]="message">
-  </app-simple-alert-view>
-</ng-template>
-
-<ng-container [ngTemplateOutlet]="timeEndTemplate"
-  [ngTemplateOutletContext]="{title:'Game over', $implicit:'timer ended'}"></ng-container>
-
-<ng-container [ngTemplateOutlet]="timeEndTemplate"></ng-container>
-<ng-container [ngTemplateOutlet]="timeEndTemplate"></ng-container>
-<ng-container [ngTemplateOutlet]="timeEndTemplate"></ng-container>
   
+  <div #alert></div>
   
 </div>

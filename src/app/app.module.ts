@@ -30,6 +30,9 @@ import { SimpleAlertViewComponent } from './simple-alert-view/simple-alert-view.
     FormsModule,
     HttpModule
   ],
+  entryComponents: [
+    SimpleAlertViewComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

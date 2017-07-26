@@ -1,4 +1,4 @@
-import { Component, ViewChildren, AfterContentInit, QueryList, AfterViewInit, ChangeDetectorRef, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, AfterContentInit, AfterViewInit, ElementRef, ViewChild, Renderer2, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { SimpleAlertViewComponent } from "app/simple-alert-view/simple-alert-view.component";
 
 @Component({
@@ -10,11 +10,12 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   public isAddTimerVisible:boolean = false;
   public time:number = 0;
   public timers:Array<number> = [];
+  public simpleAlert:ComponentRef<SimpleAlertViewComponent> = null;
 
-  @ViewChildren(SimpleAlertViewComponent) alerts: QueryList<SimpleAlertViewComponent>;
   @ViewChild("timerInput") timeInput: ElementRef;
+  @ViewChild("alert", {read:ViewContainerRef}) alertContainer: ViewContainerRef;
 
-  constructor(private cdRef:ChangeDetectorRef, private renderer: Renderer2) { 
+  constructor(private renderer: Renderer2, private resolver: ComponentFactoryResolver) { 
     this.timers = [3, 20, 185];
   }
 
@@ -23,19 +24,11 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
 
     this.renderer.setAttribute(this.timeInput.nativeElement, "placeholder", "enter seconds");
     this.renderer.addClass(this.timeInput.nativeElement, 'time-in');
-
-    this.alerts.forEach(item => {
-      if(!item.title){
-        item.title = "Hi!";
-        item.message = "Hello world";
-      }
-      console.log(item);
-    });
-
-    this.cdRef.detectChanges();
   }
 
   ngAfterContentInit(){
+    const alertFactory = this.resolver.resolveComponentFactory(SimpleAlertViewComponent);
+    this.simpleAlert = this.alertContainer.createComponent(alertFactory);
   }
 
   logCountdownEnd(){
@@ -54,7 +47,7 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   }
 
   public showEndTimerAlert(){
-    this.alerts.first.show();
+    this.simpleAlert.instance.show();
   }
 
   public submitAddTimer(){
