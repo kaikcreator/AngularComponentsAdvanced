@@ -1,6 +1,8 @@
 import { Component, AfterContentInit, AfterViewInit, ElementRef, ViewChild, Renderer2, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { SimpleAlertViewComponent } from "app/simple-alert-view/simple-alert-view.component";
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,6 +31,10 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   ngAfterContentInit(){
     const alertFactory = this.resolver.resolveComponentFactory(SimpleAlertViewComponent);
     this.simpleAlert = this.alertContainer.createComponent(alertFactory);
+    this.simpleAlert.instance.title = "timer ended";
+    this.simpleAlert.instance.message = "your countdown has finished";
+    this.simpleAlert.instance.onDismiss.subscribe(()=>{console.log("dismissed!!!")});
+    console.log(this.simpleAlert.instance);
   }
 
   logCountdownEnd(){

@@ -9,6 +9,7 @@ export class SimpleAlertViewComponent implements OnInit {
 
   constructor() { }
 
+  @Output() onDismiss: EventEmitter<void> = new EventEmitter<void>();
   @Input() message:string;
   @Input() title:string;
   public visible:boolean = false;
@@ -18,6 +19,7 @@ export class SimpleAlertViewComponent implements OnInit {
 
   public dismiss(){
     this.visible = false;
+    this.onDismiss.emit();
   }
 
   public show(){
