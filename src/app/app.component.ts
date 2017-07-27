@@ -29,12 +29,6 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   }
 
   ngAfterContentInit(){
-    const alertFactory = this.resolver.resolveComponentFactory(SimpleAlertViewComponent);
-    this.simpleAlert = this.alertContainer.createComponent(alertFactory);
-    this.simpleAlert.instance.title = "timer ended";
-    this.simpleAlert.instance.message = "your countdown has finished";
-    this.simpleAlert.instance.onDismiss.subscribe(()=>{console.log("dismissed!!!")});
-    console.log(this.simpleAlert.instance);
   }
 
   logCountdownEnd(){
@@ -53,6 +47,14 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   }
 
   public showEndTimerAlert(){
+    const alertFactory = this.resolver.resolveComponentFactory(SimpleAlertViewComponent);
+    this.simpleAlert = this.alertContainer.createComponent(alertFactory);
+    this.simpleAlert.instance.title = "timer ended";
+    this.simpleAlert.instance.message = "your countdown has finished";
+    this.simpleAlert.instance.onDismiss.subscribe(()=>{
+      this.simpleAlert.destroy();
+    });
+
     this.simpleAlert.instance.show();
   }
 
